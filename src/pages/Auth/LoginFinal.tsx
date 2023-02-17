@@ -76,8 +76,6 @@ const LoginFinal = () => {
   useEffect(() => {
     if (state === 'signUpSuccess') {
       signUpModalChange();
-    } else {
-      signUpModalChange();
     }
     console.log(signUpModalZus);
   }, []);

@@ -58,7 +58,7 @@ const SignUpFinal = () => {
       passwordCheck &&
       genderClick
     ) {
-      navigate('/auth/login', { state: 'signUpSuccess' });
+      navigate('/auth', { state: 'signUpSuccess' });
     }
   };
 
@@ -88,7 +88,7 @@ const SignUpFinal = () => {
     <>
       <div className="inner">
         <div className="authLogo">
-          <Link to="/auth/login" style={{ color: '#484848', display: 'flex' }}>
+          <Link to="/auth" style={{ color: '#484848', display: 'flex' }}>
             <RiArrowLeftLine className="backIcon" />
             <span>로그인 페이지로 이동</span>
             <img src={logo} alt="" className="logoSignUp" />

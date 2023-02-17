@@ -51,7 +51,7 @@ const Input = ({
     // onTextClick && onTextClick();
   };
 
-  //회원가입 ㅜㅂ분 인증 텍스트 클릭 이벤트
+  //회원가입 부분 인증 텍스트 클릭 이벤트
   const onEventClick2 = (): void => {
     if (phoneCheck) {
       onViewClick && onViewClick();
