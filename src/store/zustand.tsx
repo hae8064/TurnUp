@@ -7,6 +7,8 @@ interface PwdStoreInt {
   countStateChange: () => void;
   signUpModalZus: boolean;
   signUpModalChange: () => void;
+  signUpSuccess: boolean;
+  signUpSuccessChange: () => void;
 }
 
 export const usePwdStore = create<PwdStoreInt>((set) => ({
@@ -19,4 +21,7 @@ export const usePwdStore = create<PwdStoreInt>((set) => ({
   countState: 0,
   countStateChange: () =>
     set((state) => ({ countState: (state.countState += 1) })),
+  signUpSuccess: false,
+  signUpSuccessChange: () =>
+    set((state) => ({ signUpSuccess: !state.signUpSuccess })),
 }));
