@@ -30,10 +30,10 @@ const Layout = () => {
         <PwdForgotComponent></PwdForgotComponent>
       </div>
       <div className="auth_left">
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<LoginFinal />}></Route>
           <Route path="/signUp" element={<SignUpFinal />}></Route>
-        </Routes>
+        </Routes> */}
       </div>
       <div className="auth_right">
         <span className="imgMainText">

@@ -6,23 +6,29 @@ import { ButtonBox } from '../systems/Button/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { toggleOn } from '../../store/pwdSlice';
+import { usePwdStore } from '../../store/zustand';
 
 interface PwdForgotType {
   visible: boolean;
 }
 const PwdForgotComponent = () => {
+  // Zustand 상태관리
+  const {
+    pwdModalVisibleZustand,
+    signUpModalZus,
+    signUpModalChange,
+    pwdToggleZus,
+    countState,
+    countStateChange,
+  } = usePwdStore();
+
   //비밀번호 모달창 취소 버튼 클릭이벤트
   const onCancelModal = () => {
-    dispatch(toggleOn());
+    pwdToggleZus();
   };
 
-  const dispatch = useDispatch();
-  const pwdState = useSelector((state: RootState) => {
-    return state.pwdForgot.value;
-  });
-
   return (
-    <PwdForgotStyle visible={pwdState}>
+    <PwdForgotStyle visible={pwdModalVisibleZustand}>
       <div className="topIcon">
         <RiCloseLine
           className="closeLineIcon"
