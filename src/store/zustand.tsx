@@ -9,6 +9,8 @@ interface PwdStoreInt {
   signUpModalChange: () => void;
   signUpSuccess: boolean;
   signUpSuccessChange: () => void;
+  currentUrl: boolean;
+  currentUrlChange: () => void;
 }
 
 export const usePwdStore = create<PwdStoreInt>((set) => ({
@@ -24,4 +26,6 @@ export const usePwdStore = create<PwdStoreInt>((set) => ({
   signUpSuccess: false,
   signUpSuccessChange: () =>
     set((state) => ({ signUpSuccess: !state.signUpSuccess })),
+  currentUrl: true,
+  currentUrlChange: () => set((state) => ({ currentUrl: !state.currentUrl })),
 }));

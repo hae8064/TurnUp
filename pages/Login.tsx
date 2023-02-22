@@ -43,6 +43,7 @@ function Login() {
     pwdToggleZus,
     countState,
     countStateChange,
+    currentUrlChange,
   } = usePwdStore();
 
   //   비밀번호 잊으셨나요 클릭 이벤트
@@ -82,10 +83,6 @@ function Login() {
 
   useEffect(() => {
     console.log('state', state);
-    // if (state === 'signUpSuccess') {
-    //   signUpModalChange();
-    // }
-    // console.log(signUpModalZus);
   }, []);
 
   return (
@@ -145,9 +142,9 @@ function Login() {
       </ButtonBox>
       <div className="loginBottomContainer">
         <span>턴업이 처음이신가요?</span>
-        <Link href="/SignUp" style={{ listStyle: 'none', color: '#3B89FE' }}>
-          <span className="loginSignUpText">회원가입</span>
-        </Link>
+        <span className="loginSignUpText" onClick={() => currentUrlChange()}>
+          회원가입
+        </span>
       </div>
     </div>
   );
