@@ -7,6 +7,7 @@ const SuccessSignUp = () => {
   const { signUpSuccess, signUpSuccessChange } = usePwdStore();
 
   console.log(signUpSuccess);
+  
   setTimeout(() => {
     if (signUpSuccess) {
       signUpSuccessChange();

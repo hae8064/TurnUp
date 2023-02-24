@@ -11,12 +11,8 @@ import TextLine2 from '../src/assets/Group 2137891616';
 import { useRouter } from 'next/router';
 import useTotalHook from '../src/hooks/useTotalHook';
 import { usePwdStore } from '../src/store/zustand';
-import { RootState } from '../src/store';
 import CheckIconClick from '../src/assets/Vector 5';
 import CheckIcon from '../src/assets/Vector-checkBoxFill';
-import { toggleOn } from '../src/store/pwdSlice';
-import PwdForgotComponent from '../src/components/PwdForgot/PwdForgotComponent';
-import SignUp from './SignUp';
 import Image from 'next/image';
 import {
   RiEyeOffLine,
@@ -24,7 +20,6 @@ import {
   RiMailLine,
   RiMenuFill,
 } from 'react-icons/ri';
-import Link from 'next/link';
 
 function Login() {
   const [email, emailChange, emailCheck] = useTotalHook('email');
@@ -81,9 +76,7 @@ function Login() {
     }
   }, [emailCheck, passwordCheck]);
 
-  useEffect(() => {
-    console.log('state', state);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="inner">
@@ -137,7 +130,11 @@ function Login() {
           비밀번호를 잊으셨나요?
         </span>
       </div>
-      <ButtonBox block={true} bgColor={loginBtnActive ? '#3B72FE' : '#a8c0ff'}>
+      <ButtonBox
+        block={true}
+        bgColor={loginBtnActive ? '#3B72FE' : '#a8c0ff'}
+        onClick={onLoginBtnClick}
+      >
         로그인
       </ButtonBox>
       <div className="loginBottomContainer">
