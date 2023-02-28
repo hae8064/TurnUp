@@ -11,6 +11,10 @@ interface PwdStoreInt {
   signUpSuccessChange: () => void;
   currentUrl: boolean;
   currentUrlChange: () => void;
+  userOut: boolean;
+  setUserOut: () => void;
+  editProfile: boolean;
+  setEditProfile: () => void;
 }
 
 export const usePwdStore = create<PwdStoreInt>((set) => ({
@@ -28,4 +32,8 @@ export const usePwdStore = create<PwdStoreInt>((set) => ({
     set((state) => ({ signUpSuccess: !state.signUpSuccess })),
   currentUrl: true,
   currentUrlChange: () => set((state) => ({ currentUrl: !state.currentUrl })),
+  userOut: false,
+  setUserOut: () => set((state) => ({ userOut: !state.userOut })),
+  editProfile: false,
+  setEditProfile: () => set((state) => ({ editProfile: !state.editProfile })),
 }));

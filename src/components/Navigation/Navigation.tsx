@@ -6,6 +6,7 @@ import {
   RiInstagramLine,
   RiBookMarkLine,
 } from 'react-icons/ri';
+import Link from 'next/link';
 
 function Navigation() {
   return (
@@ -25,10 +26,20 @@ function Navigation() {
         <div className="divider"></div>
 
         <div className="NavigationMainContent">
-          <div className="NavMyPage">
-            <RiAccountCircleLine className="PersonIcon" />
-            <div className="NavMyPageTitle">마이페이지</div>
-          </div>
+          <Link
+            href="/me"
+            style={{
+              listStyle: 'none',
+              textDecoration: 'none',
+              color: 'black',
+            }}
+          >
+            <div className="NavMyPage">
+              <RiAccountCircleLine className="PersonIcon" />
+              <div className="NavMyPageTitle">마이페이지</div>
+            </div>
+          </Link>
+
           <div className="NavMyPage">
             <RiInstagramLine className="PersonIcon" />
             <div className="NavMyPageTitle">인스타그램</div>

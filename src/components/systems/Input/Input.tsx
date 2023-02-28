@@ -48,7 +48,6 @@ const Input = ({
   const onEventClick = (): void => {
     setPwdCheck(!pwdCheck);
     console.log(type);
-    // onTextClick && onTextClick();
   };
 
   //회원가입 부분 인증 텍스트 클릭 이벤트
@@ -56,7 +55,6 @@ const Input = ({
     if (phoneCheck) {
       onViewClick && onViewClick();
     }
-    // onViewClick && onViewClick();
   };
 
   useEffect(() => {
@@ -86,7 +84,6 @@ const Input = ({
       <div className="input_box">
         <input
           type={pwdCheck ? 'string' : typeNumber ? 'number' : type}
-          // type={pwdVisible === '' ? type : pwdVisible}
           {...rest}
           className={error ? 'error' : ''}
           placeholder={placeholder}
@@ -96,9 +93,6 @@ const Input = ({
             {rightText}
           </span>
         )}
-        {/* <span className="rightBtn" onClick={onEventClick}>
-          클릭
-        </span> */}
         {RightBtn && <RightBtn className="rightBtn" onClick={onEventClick} />}
       </div>
       {error && (

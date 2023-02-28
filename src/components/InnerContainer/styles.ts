@@ -5,8 +5,6 @@ export const InnerContainerStyle = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
     margin-left: 308px;
     ::-webkit-scrollbar {
       display: none;
@@ -40,6 +38,7 @@ export const InnerContainerStyle = styled.div`
       }
 
       .appDownBtn {
+        position: relative;
         background: #3b72fe;
         width: 180px;
         border-radius: 10px;
@@ -55,6 +54,31 @@ export const InnerContainerStyle = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
+
+        .toolTipCT1 {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .toolTip {
+          position: absolute;
+          top: 120%;
+          width: 361px;
+          height: 228px;
+          background: #ffffff;
+          color: #000;
+          border-radius: 8px;
+          z-index: 11;
+        }
+
+        .toolTipCT0 {
+          /* display: none; */
+        }
       }
     }
   }

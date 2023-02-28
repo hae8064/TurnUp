@@ -17,12 +17,12 @@ import Image from 'next/image';
 import useTotalHook from '../src/hooks/useTotalHook';
 import Menu from '../src/assets/Menu';
 import logo from '../src/assets/imgs/Logo.png';
-import { useRouter } from 'next/router';
 
 import { usePwdStore } from '../src/store/zustand';
+import { useRouter } from 'next/router';
 
 function SignUp() {
-  const navigate = useRouter();
+  const router = useRouter();
   const [pwdVisible, setPwdVisible] = useState(false);
   const [phoneInputVisible, setPhoneInputVisible] = useState(false);
   const [genderClick, setGenderClick] = useState('');
@@ -37,16 +37,11 @@ function SignUp() {
 
   // Zustand 상태관리
   const {
-    pwdModalVisibleZustand,
-    signUpModalZus,
-    signUpModalChange,
-    pwdToggleZus,
-    countState,
-    countStateChange,
-    signUpSuccess,
     signUpSuccessChange,
-    currentUrl,
     currentUrlChange,
+    setUserOut,
+    pwdToggleZus,
+    pwdModalVisibleZustand,
   } = usePwdStore();
 
   //비밀번호 보이게 클릭 이벤트
@@ -61,24 +56,35 @@ function SignUp() {
 
   //회원가입 버튼 클릭 이벤트
   const onSignUpClick = () => {
+    console.log(
+      emailCheck,
+      numberCheck,
+      nameCheck,
+      phoneCheck,
+      birthdayCheck,
+      passwordCheck
+    );
+
     if (
       emailCheck &&
       numberCheck &&
       nameCheck &&
       phoneCheck &&
       birthdayCheck &&
-      passwordCheck &&
-      genderClick
+      passwordCheck
     ) {
+      if (pwdModalVisibleZustand) {
+        pwdToggleZus();
+      }
       signUpSuccessChange();
-      navigate.push('/');
-      // navigate('/auth', { state: 'signUpSuccess' });
+      currentUrlChange();
+      // router.push('/');
     }
   };
 
-  // useEffect(() => {
-  //   currentUrlChange();
-  // }, []);
+  useEffect(() => {
+    setUserOut();
+  }, []);
 
   //회원가입 버튼 Active 이벤트
   useEffect(() => {

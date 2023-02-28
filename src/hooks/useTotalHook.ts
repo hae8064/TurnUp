@@ -33,6 +33,9 @@ const useTotalHook = (type: string): TotalHookType => {
       }
       e.target.value && setValue(e.target.value);
       return [value, onChange, check];
+    } else if (type === 'pwdSecd') {
+      setValue('test');
+      setCheck(false);
     }
 
     if (regExp.test(e.target.value)) {

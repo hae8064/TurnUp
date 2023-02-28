@@ -4,7 +4,8 @@ import GoogleButton from '../src/components/systems/Button/GoogleButton';
 import Input from '../src/components/systems/Input/Input';
 import { CheckButtonStyle } from '../src/components/systems/Button/CheckButtonStyle';
 import { ButtonBox } from '../src/components/systems/Button/styles';
-import SuccessSignUp from '../src/components/SuccessSignUp/SuccessSignUp';
+// import SuccessSignUp from '../src/components/Modal/SuccessSignUp/SuccessSignUp';
+import SuccessSignUp from '@src/components/Modal/SuccessSignUp/SuccessSignUp';
 import logo from '../src/assets/imgs/Logo.png';
 import TextLine from '../src/assets/Vector (1)';
 import TextLine2 from '../src/assets/Group 2137891616';
@@ -39,12 +40,15 @@ function Login() {
     countState,
     countStateChange,
     currentUrlChange,
+    userOut,
+    setUserOut,
+    signUpSuccess,
   } = usePwdStore();
 
   //   비밀번호 잊으셨나요 클릭 이벤트
   const onPwdForgotClick = () => {
     pwdToggleZus();
-    console.log(pwdModalVisibleZustand);
+    console.log('클릭??' + pwdModalVisibleZustand);
     // 리덕스 state 변경 코드
   };
 
@@ -61,14 +65,6 @@ function Login() {
   };
 
   useEffect(() => {
-    if (pwdModalVisibleZustand) {
-      setPwdVisible(true);
-    } else {
-      setPwdVisible(false);
-    }
-  }, [pwdModalVisibleZustand]);
-
-  useEffect(() => {
     if (emailCheck && passwordCheck) {
       setLoginBtnActive(true);
     } else {
@@ -76,11 +72,22 @@ function Login() {
     }
   }, [emailCheck, passwordCheck]);
 
-  useEffect(() => {}, []);
-
   return (
     <div className="inner">
-      <SuccessSignUp />
+      {userOut ? (
+        <SuccessSignUp
+          title="완료되었습니다."
+          subTitle="턴업 회원이 정상적으로 탈퇴되었습니다."
+        />
+      ) : (
+        signUpSuccess && (
+          <SuccessSignUp
+            title="회원 가입이 완료되었습니다."
+            subTitle="서비스 이용을 위해 로그인 해주세요."
+          />
+        )
+      )}
+
       <div className="authLogo">
         <Image src={logo} alt="logo Img" />
         <RiMenuFill className="menuIcon" />

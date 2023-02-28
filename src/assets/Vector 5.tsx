@@ -10,8 +10,8 @@ export default function VectorFive() {
       <path
         d="M1.5 3.76923L4.47152 6.64763C4.67167 6.8415 4.99168 6.83436 5.18297 6.63174L10.5 1"
         stroke="white"
-        stroke-width="1.5"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
     </svg>
   );

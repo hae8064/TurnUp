@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { InnerContainerStyle } from './styles';
 import { RiArrowRightSLine, RiChromeFill, RiYoutubeFill } from 'react-icons/ri';
 import MainImgContainer from '@src/components/MainImgContainer/MainImgContainer';
@@ -10,6 +10,7 @@ import productImg from '../../assets/imgs/productImage.png';
 import jisooProduct from '../../assets/imgs/jisooImage.png';
 
 function InnerContainer() {
+  const [isHovering, setIsHovering] = useState(0);
   return (
     <InnerContainerStyle>
       <div className="innerContents">
@@ -18,10 +19,21 @@ function InnerContainer() {
           <span className="subTitle">
             내가 궁금했던 컨텐츠 속 상품을 찾아보세요!
           </span>
-          <div className="appDownBtn">
+          <div
+            className="appDownBtn"
+            onMouseOver={() => setIsHovering(1)}
+            onMouseOut={() => setIsHovering(0)}
+          >
             <RiChromeFill />
             <span className="contents">브라우저 앱 다운로드</span>
             <RiArrowRightSLine />
+
+            {isHovering === 1 && (
+              <>
+                <div className={`toolTipCT` + isHovering}></div>
+                <div className="toolTip">나와라</div>
+              </>
+            )}
           </div>
         </div>
         <MainImgContainer

@@ -9,6 +9,7 @@ import { usePwdStore } from '../src/store/zustand';
 import PwdForgotComponent from '../src/components/PwdForgot/PwdForgotComponent';
 import SignUp from './SignUp';
 import Login from './Login';
+import SuccessSignUp from '@src/components/SuccessSignUp/SuccessSignUp';
 
 function Index() {
   // Zustand 상태관리
@@ -25,13 +26,17 @@ function Index() {
     currentUrlChange,
   } = usePwdStore();
 
-  const [currentPage, setCurrentPage] = useState('');
+  // const [currentPage, setCurrentPage] = useState('');
 
   const state = useRouter();
 
   useEffect(() => {
-    setCurrentPage(state.pathname);
-  }, []);
+    if (signUpSuccess) {
+      if (pwdModalVisibleZustand) {
+        pwdToggleZus();
+      }
+    }
+  }, [signUpSuccess]);
 
   return (
     <AuthLayout>

@@ -4,7 +4,7 @@ export const AuthLayout = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   display: flex;
   position: relative;
   @media screen and (max-width: 500px) {
@@ -106,6 +106,7 @@ export const AuthLayout = styled.div`
   .inner {
     max-width: 376px;
     margin: 0 auto;
+    overflow-y: auto;
 
     .signUpBottomInfo {
       display: flex;
@@ -115,11 +116,7 @@ export const AuthLayout = styled.div`
       font-weight: 400;
       font-size: 11px;
       line-height: 12px;
-      /* identical to box height, or 100% */
-
       text-align: center;
-
-      /* Text/Light/Disabled Text */
 
       color: #d2d0ce;
       margin-top: 12px;
