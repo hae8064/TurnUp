@@ -56,15 +56,6 @@ function SignUp() {
 
   //회원가입 버튼 클릭 이벤트
   const onSignUpClick = () => {
-    console.log(
-      emailCheck,
-      numberCheck,
-      nameCheck,
-      phoneCheck,
-      birthdayCheck,
-      passwordCheck
-    );
-
     if (
       emailCheck &&
       numberCheck &&

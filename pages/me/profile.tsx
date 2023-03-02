@@ -1,4 +1,3 @@
-// import UserOutModal from '@src/components/Modal/userOutModal/userOutModal';
 import UserOutModal from '@src/components/Modal/userOutModal/UserOutModal';
 import ProfileContainer from '@src/components/MyPage/ProfileContainer/ProfileContainer';
 import Navigation from '@src/components/Navigation/Navigation';

@@ -9,12 +9,25 @@ export const MyPageContainer = styled.div`
   .modal_bgtrue {
     position: fixed;
     width: 100vw;
-    height: 100vh;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
   .modal_bgfalse {
     display: none;
+  }
+
+  .contentsCT {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .contents {
+      flex: 1;
+    }
+
+    .greyRight {
+      width: 96px;
+      background-color: #f7f7f8;
+    }
   }
 `;

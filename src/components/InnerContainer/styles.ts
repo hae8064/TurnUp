@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 
 export const InnerContainerStyle = styled.div`
+  display: flex;
+  justify-content: center;
   .innerContents {
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 308px;
+    max-width: 640px;
+    /* margin-left: 308px; */
+    flex: 1;
     ::-webkit-scrollbar {
       display: none;
+    }
+
+    .greyRight {
+      width: 200px;
+      height: 100px;
+      background: #484848;
     }
     .contentsTitle {
       display: flex;

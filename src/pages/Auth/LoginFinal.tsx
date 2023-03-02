@@ -23,7 +23,7 @@ import { RootState } from '../../store';
 import { toggleOn } from '../../store/pwdSlice';
 import { usePwdStore } from '../../store/zustand';
 import SwrTest from '../../swrTest/swr';
-import SuccessSignUp from '../../components/SuccessSignUp/SuccessSignUp';
+import SuccessSignUp from '../../components/Modal/SuccessSignUp/SuccessSignUp';
 
 const LoginFinal = () => {
   const [email, emailChange, emailCheck] = useTotalHook('email');

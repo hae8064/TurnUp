@@ -8,8 +8,13 @@ function Me() {
   return (
     <MyPageContainer>
       <Navigation />
-      <InnerContainer />
-      {/* <NothingQuestion /> */}
+      <div className="contentsCT">
+        <div className="contents">
+          <InnerContainer />
+        </div>
+        {/* <NothingQuestion /> */}
+        <div className="greyRight"></div>
+      </div>
     </MyPageContainer>
   );
 }

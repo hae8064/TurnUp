@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const NavigationStyle = styled.div`
   width: 460px;
-  height: 100%;
   background: #f7f7f8;
   position: relative;
   .NavigationMain {

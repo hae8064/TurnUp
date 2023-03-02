@@ -5,6 +5,7 @@ export const ProfileContainerStyle = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
+  height: 100vh;
   .profileSettingContainer {
     flex: 6;
     display: flex;
@@ -165,8 +166,7 @@ export const ProfileContainerStyle = styled.div`
   }
 
   .rightGrey {
-    width: 200px;
-    flex: 1;
+    width: 96px;
     height: 100%;
     background: #f7f7f8;
   }

@@ -43,7 +43,7 @@ const Layout = () => {
         <span className="imgSubText">
           궁금하고, 비슷한 상품 찾고 바로 구매까지 모두 다 턴업에서!
         </span>
-        <img src={MAINRIGHTBG} alt="auth" />
+        {/* <img src={MAINRIGHTBG} alt="auth" /> */}
       </div>
     </AuthLayout>
   );

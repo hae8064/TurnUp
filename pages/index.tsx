@@ -9,7 +9,7 @@ import { usePwdStore } from '../src/store/zustand';
 import PwdForgotComponent from '../src/components/PwdForgot/PwdForgotComponent';
 import SignUp from './SignUp';
 import Login from './Login';
-import SuccessSignUp from '@src/components/SuccessSignUp/SuccessSignUp';
+import SuccessSignUp from '@src/components/Modal/SuccessSignUp/SuccessSignUp';
 
 function Index() {
   // Zustand 상태관리
